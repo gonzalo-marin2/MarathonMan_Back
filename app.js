@@ -3,10 +3,33 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors');
+
+/* const mysql = require('mysql');
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  port: 3306,
+  database: 'marathonman'
+});
+
+connection.connect((error) => {
+  if (error) return console.log(error);
+  console.log('Se ha conectado correctamente');
+  connection.query('select * from usuarios', (error, rows) => {
+    if (error) return console.log(error);
+    console.log(rows);
+  });
+}) */
+
+require('./dbConfig').createPool();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
+const dbConfig = require('./dbConfig');
+
 
 var app = express();
 
