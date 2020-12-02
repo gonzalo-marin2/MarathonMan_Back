@@ -5,23 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
 
-/* const mysql = require('mysql');
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  port: 3306,
-  database: 'marathonman'
-});
-
-connection.connect((error) => {
-  if (error) return console.log(error);
-  console.log('Se ha conectado correctamente');
-  connection.query('select * from usuarios', (error, rows) => {
-    if (error) return console.log(error);
-    console.log(rows);
-  });
-}) */
 
 require('./dbConfig').createPool();
 
