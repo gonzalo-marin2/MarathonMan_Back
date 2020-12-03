@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 GET http://localhost:3000/api/eventos
+=======
+GET http://localhost:3000/api/eventos
+
+###
+
+>>>>>>> develop
