@@ -11,8 +11,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-
-
 router.post('/', async (req, res) => {
     try {
         const result = await create(req.body);
@@ -29,6 +27,5 @@ router.post('/', async (req, res) => {
         res.json({ error: error.message });
     }
 })
-
 
 module.exports = router;
