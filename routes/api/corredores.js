@@ -1,8 +1,7 @@
 const router = require('express').Router();
-const { getAll, getById, getByEvento } = require('../../models/corredor');
+const { getAll, create, getById, getByEvento } = require('../../models/corredor');
 //const bcrypt = require('bcrypt');
-/* const jwt = require('jsonwebtoken');
-const dayjs = require('dayjs'); */
+
 
 router.get('/', async (req, res) => {
     try {
