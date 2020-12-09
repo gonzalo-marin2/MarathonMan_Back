@@ -1,5 +1,8 @@
 const router = require('express').Router();
-const { getAll } = require('../../models/corredor')
+const { getAll, getById, getByEvento } = require('../../models/corredor');
+//const bcrypt = require('bcrypt');
+/* const jwt = require('jsonwebtoken');
+const dayjs = require('dayjs'); */
 
 router.get('/', async (req, res) => {
     try {
@@ -9,5 +12,26 @@ router.get('/', async (req, res) => {
         res.json({ error: error.message })
     }
 });
+
+
+
+/* router.post('/registro', async (req, res) => {
+    try {
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
+        const result = await create(req.body);
+        res.json(result);
+    } catch (error) {
+        res.json({ error: error.message })
+    }
+});
+
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const usuario = await getByEmail(email);
+    } catch (error) {
+        res.json({ error: error.message })
+    }
+}); */
 
 module.exports = router;

@@ -8,14 +8,14 @@ const getAll = () => {
 }
 
 
-const create = ({ titulo, nivel, zona, fecha, hora }) => {
+/* const create = ({ titulo, nivel, zona, fecha, hora }) => {
     return new Promise((resolve, reject) => {
         db.query('insert into eventos (titulo, nivel, zona, fecha, hora) values (?, ?, ?, ?, ?)', [titulo, nivel, zona, fecha, hora], (err, result) => {
             if (err) reject(err);
             resolve(result);
         })
     })
-}
+} */
 
 
 const getById = (pEventoId) => {
@@ -27,6 +27,10 @@ const getById = (pEventoId) => {
         })
     })
 }
+
+
+
+const getCorredoresByEvento
 
 
 module.exports = { getAll, create, getById }
