@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { getAll, getById, getByEvento } = require('../../models/corredor');
-//const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 /* const jwt = require('jsonwebtoken');
 const dayjs = require('dayjs'); */
 
@@ -13,9 +13,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-
-
-/* router.post('/registro', async (req, res) => {
+router.post('/registro', async (req, res) => {
     try {
         req.body.password = bcrypt.hashSync(req.body.password, 10);
         const result = await create(req.body);
@@ -32,6 +30,6 @@ router.post('/login', async (req, res) => {
     } catch (error) {
         res.json({ error: error.message })
     }
-}); */
+});
 
 module.exports = router;
