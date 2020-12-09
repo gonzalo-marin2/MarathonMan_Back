@@ -52,6 +52,4 @@ const updateById = (pUsuarioId, { nombre, apellidos, edad, email, telefono, nive
 
 //const getByEvento
 
-module.exports = {
-    getAll, create, getById, deleteById, updateById
-}
+module.exports = { getAll, getById }
