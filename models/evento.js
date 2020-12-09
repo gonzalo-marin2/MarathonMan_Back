@@ -30,7 +30,7 @@ const getById = (pEventoId) => {
 
 
 
-const getCorredoresByEvento
+//const getCorredoresByEvento
 
 
-module.exports = { getAll, create, getById }
+module.exports = { getAll, getById }
