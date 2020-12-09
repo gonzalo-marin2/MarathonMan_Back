@@ -3,9 +3,9 @@ const getAll = () => {
         db.query('select * from usuarios', (error, rows) => {
             if (error) reject(error);
             resolve(rows)
-        })
-    })
-}
+        });
+    });
+};
 
 
 const create = ({ nombre, apellidos, edad, email, telefono, nivel, zona }) => {
