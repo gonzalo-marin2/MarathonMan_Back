@@ -14,12 +14,11 @@ POST http://localhost:3000/api/eventos
 Content-Type: application/json
 
 {
-    "fecha": "Tue Nov 25 2020 02:00:00",
-"hora": "23:00",
 "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Runner_Runner.jpg/250px-Runner_Runner.jpg",
-"nivel": "Avanzado",
 "titulo": "Carrera diurna",
+"nivel": "Avanzado",
+"fecha": "2020-12-23",
+"hora": "23:00",
 "zona": "Madrid Norte"
-
 }
 
