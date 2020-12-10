@@ -8,7 +8,7 @@ const getAll = () => {
 };
 
 
-/* const create = ({ nombre, apellidos, edad, email, telefono, nivel, zona }) => {
+const create = ({ nombre, apellidos, edad, email, telefono, nivel, zona }) => {
     return new Promise((resolve, reject) => {
         db.query('INSERT INTO corredores (nombre, apellidos, edad, email, telefono, nivel, zona) values (?, ?, ?, ?, ?, ?, ?)', [nombre, apellidos, edad, email, telefono, nivel, zona], (error, result) => {
             if (error) reject(error);
@@ -16,7 +16,7 @@ const getAll = () => {
         }
         )
     })
-} */
+}
 
 
 const getById = (pUsuarioId) => {
@@ -52,4 +52,4 @@ const updateById = (pUsuarioId, { nombre, apellidos, edad, email, telefono, nive
 
 //const getByEvento
 
-module.exports = { getAll, getById }
+module.exports = { getAll, create, getById }

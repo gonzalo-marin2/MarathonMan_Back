@@ -1,8 +1,7 @@
 const router = require('express').Router();
-const { getAll, getById, getByEvento } = require('../../models/corredor');
+const { getAll, create, getById, getByEvento } = require('../../models/corredor');
 const bcrypt = require('bcryptjs');
-/* const jwt = require('jsonwebtoken');
-const dayjs = require('dayjs'); */
+
 
 router.get('/', async (req, res) => {
     try {
@@ -12,6 +11,8 @@ router.get('/', async (req, res) => {
         res.json({ error: error.message })
     }
 });
+
+
 
 router.post('/registro', async (req, res) => {
     try {
