@@ -8,9 +8,10 @@ const getAll = () => {
 };
 
 
-const create = ({ comentario }) => {
+const create = (pObjeto) => {
+    console.log(pObjeto);
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO comentarios (comentario) values (?)', [comentario], (error, result) => {
+        db.query('INSERT INTO comentarios (comentario) values (?)', [pObjeto.comentario], (error, result) => {
             if (error) reject(error);
             resolve(result);
         }
@@ -18,6 +19,15 @@ const create = ({ comentario }) => {
     })
 }
 
-module.exports = {
-    getAll, create
+
+const getById = (pComentarioId) => {
+    return new Promise((resolve, reject) => {
+        db.query('select * from comentarios where id = ?', [pComentarioId], (err, rows) => {
+            if (err) reject(err);
+            if (rows.length === 0) resolve(null);
+            resolve(rows[0]);
+        })
+    })
 }
+
+module.exports = { getAll, create, getById }

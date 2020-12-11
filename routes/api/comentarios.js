@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, create } = require('../../models/comentario');
+const { getAll, create, getById } = require('../../models/comentario');
 
 
 router.get('/', async (req, res) => {
@@ -13,13 +13,14 @@ router.get('/', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
+    console.log(req.body);
     try {
         const result = await create(req.body);
         if (result.affectedRows === 1) {
-            const nuevoEvento = await getById(result.insertId);
+            const nuevoComentario = await getById(result.insertId);
             res.json({
                 mensaje: 'Se ha insertado correctamente',
-                evento: nuevoEvento
+                comentario: nuevoComentario
             });
         } else {
             res.json({ error: 'No se ha podido insertar' })
