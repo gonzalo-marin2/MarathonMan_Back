@@ -8,12 +8,16 @@ const getAll = () => {
 };
 
 
-const create = () => {
+const create = ({ comentario }) => {
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO comentarios', (error, result) => {
+        db.query('INSERT INTO comentarios (comentario) values (?)', [comentario], (error, result) => {
             if (error) reject(error);
             resolve(result);
         }
         )
     })
+}
+
+module.exports = {
+    getAll, create
 }

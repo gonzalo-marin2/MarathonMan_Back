@@ -13,8 +13,7 @@ const create = ({ nombre, apellidos, edad, email, telefono, nivel, zona }) => {
         db.query('INSERT INTO corredores (nombre, apellidos, edad, email, telefono, nivel, zona) values (?, ?, ?, ?, ?, ?, ?)', [nombre, apellidos, edad, email, telefono, nivel, zona], (error, result) => {
             if (error) reject(error);
             resolve(result);
-        }
-        )
+        });
     })
 }
 
