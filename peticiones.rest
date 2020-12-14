@@ -45,5 +45,8 @@ Content-Type: application/json
 GET http://localhost:3000/api/comentarios
 
 ###
-DELETE http://localhost:3000/api/comentarios/7
+DELETE http://localhost:3000/api/comentarios/8
 Content-Type: application/json
+
+###
+GET http://localhost:3000/api/corredores/2
