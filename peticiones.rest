@@ -1,13 +1,23 @@
 GET http://localhost:3000/api/eventos
 
-###
-GET http://localhost:3000/api/usuarios
-
-###
-POST http://localhost:3000/api/usuarios/registro
 
 ###
 GET http://localhost:3000/api/corredores
+
+###
+POST http://localhost:3000/api/corredores/registro
+Content-Type: application/json
+
+{
+    "nombre": "Marco",
+    "apellidos": "Leoncio",
+    "edad": 32,
+    "email": "marco@gmail.com",
+    "password": "123456",
+    "telefono": 123456789,
+    "nivel": "principiante",
+    "zona": "Madrid Capital"
+}
 
 ###
 POST http://localhost:3000/api/eventos
