@@ -30,4 +30,13 @@ const getById = (pComentarioId) => {
     })
 }
 
-module.exports = { getAll, create, getById }
+const deleteById = (pComentarioId) => {
+    return new Promise((resolve, reject) => {
+        db.query('delete from comentarios where id = ?', [pComentarioId], (error, result) => {
+            if (error) reject(error);
+            resolve(result);
+        });
+    });
+}
+
+module.exports = { getAll, create, getById, deleteById }
