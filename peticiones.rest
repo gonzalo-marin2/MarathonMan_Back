@@ -38,12 +38,12 @@ Content-Type: application/json
 
 {
     "titulo": "Hola",
-    "comentario": "Hola corredores!"
+    "comentario": "Hola amigüitos!"
 }
 
 ###
 GET http://localhost:3000/api/comentarios
 
 ###
-DELETE http://localhost:3000/api/comentarios/5
+DELETE http://localhost:3000/api/comentarios/6
 Content-Type: application/json

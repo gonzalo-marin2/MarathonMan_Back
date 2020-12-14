@@ -11,7 +11,7 @@ const getAll = () => {
 const create = (pObjeto) => {
     console.log(pObjeto);
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO comentarios (comentario) values (?)', [pObjeto.comentario], (error, result) => {
+        db.query('INSERT INTO comentarios (titulo, comentario) values (?, ?)', [pObjeto.titulo, pObjeto.comentario], (error, result) => {
             if (error) reject(error);
             resolve(result);
         }
