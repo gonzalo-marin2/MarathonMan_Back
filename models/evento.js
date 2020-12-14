@@ -28,9 +28,18 @@ const getById = (pEventoId) => {
     })
 }
 
+const deleteById = (pEventoId) => {
+    return new Promise((resolve, reject) => {
+        db.query('delete from eventos where id = ?', [pEventoId], (error, result) => {
+            if (error) reject(error);
+            resolve(result);
+        });
+    });
+}
+
 
 
 //const getCorredoresByEvento = () =>
 
 
-module.exports = { getAll, create, getById }
+module.exports = { getAll, create, getById, deleteById }
