@@ -15,6 +15,7 @@ router.get('/', async (req, res) => {
 
 
 router.post('/registro', async (req, res) => {
+    console.log(res.body);
     try {
         req.body.password = bcrypt.hashSync(req.body.password, 10);
         const result = await create(req.body);
