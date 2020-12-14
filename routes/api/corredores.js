@@ -12,6 +12,15 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:corredorId', async (req, res) => {
+    try {
+        const corredor = await getById(req.params.corredorId);
+        res.json(corredor);
+    } catch (error) {
+        res.json({ error: error.message })
+    }
+});
+
 
 
 router.post('/registro', async (req, res) => {
