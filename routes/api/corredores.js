@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, create, getById, getByEvento } = require('../../models/corredor');
+const { getAll, create, getById, getByEmail, getByEvento } = require('../../models/corredor');
 const bcrypt = require('bcryptjs');
 
 

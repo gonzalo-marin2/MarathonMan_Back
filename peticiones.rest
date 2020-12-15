@@ -52,3 +52,12 @@ Content-Type: application/json
 DELETE http://localhost:3000/api/eventos/23
 Content-Type: application/json
 
+
+###
+POST http://localhost:3000/api/corredores/login
+Content-Type: application/json
+
+{
+    "email": "gonzalo@gmail.com",
+    "password": "12345"
+}

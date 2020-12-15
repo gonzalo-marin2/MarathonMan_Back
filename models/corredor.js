@@ -28,6 +28,15 @@ const getById = (pUsuarioId) => {
     })
 }
 
+const getByEmail = (pEmail) => {
+    return new Promise((resolve, reject) => {
+        db.query('select * from corredores where email = ?', [pEmail], (err, rows) => {
+            if (err) reject(err);
+            if (rows.length !== 1) resolve(null); // El email debe ser único
+            resolve(rows[0]);
+        });
+    });
+}
 
 /* const deleteById = (pUsuarioId) => {
     return new Promise((resolve, reject) => {
@@ -51,4 +60,4 @@ const updateById = (pUsuarioId, { nombre, apellidos, edad, email, telefono, nive
 
 //const getByEvento
 
-module.exports = { getAll, create, getById }
+module.exports = { getAll, create, getById, getByEmail }
