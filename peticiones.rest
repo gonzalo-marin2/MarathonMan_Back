@@ -45,7 +45,6 @@ Content-Type: application/json
 GET http://localhost:3000/api/comentarios
 
 ###
-<<<<<<< HEAD
 DELETE http://localhost:3000/api/comentarios/8
 Content-Type: application/json
 
@@ -66,26 +65,3 @@ Content-Type: application/json
     "nivel": "avanzado",
     "zona": "Madrid Capital"
 }
-=======
-DELETE http://localhost:3000/api/comentarios/11
-Content-Type: application/json
-
-###
-DELETE http://localhost:3000/api/eventos/23
-Content-Type: application/json
-
-###
-POST http://localhost:3000/api/corredores/registro 
-Content-Type: :application/json 
-
-{
-    "nombre": "Leo",
-    "apellidos": "Polo",
-    "edad": 18,
-    "email": "leo@gmail.com",
-    "password": 123456,
-    "telefono": 123456789,
-    "nivel": "principiante",
-    "zona": "Madrid Capital"
-}
->>>>>>> a5d6561a857b3e2d1530c4389a29c3c5bc0eaf6e
