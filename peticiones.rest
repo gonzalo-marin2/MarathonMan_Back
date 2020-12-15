@@ -45,17 +45,23 @@ Content-Type: application/json
 GET http://localhost:3000/api/comentarios
 
 ###
-<<<<<<< HEAD
-DELETE http://localhost:3000/api/comentarios/11
-Content-Type: application/json
-
-###
-DELETE http://localhost:3000/api/eventos/23
-Content-Type: application/json
-=======
 DELETE http://localhost:3000/api/comentarios/8
 Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/corredores/2
->>>>>>> 92209d966633a9b8414ea6a8fa5b35c5264bba44
+
+###
+POST http://localhost:3000/api/corredores/registro
+Content-Type: application/json
+
+{
+    "nombre": "Leo",
+    "apellidos": "Messi",
+    "edad": 35,
+    "email": "leo@mail.com",
+    "password": 12345,
+    "telefono": 931234567,
+    "nivel": "avanzado",
+    "zona": "Madrid Capital"
+}
