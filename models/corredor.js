@@ -8,9 +8,9 @@ const getAll = () => {
 };
 
 
-const create = ({ nombre, apellidos, edad, email, telefono, nivel, zona }) => {
+const create = ({ nombre, apellidos, edad, email, password, telefono, nivel, zona }) => {
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO corredores (nombre, apellidos, edad, email, telefono, nivel, zona) values (?, ?, ?, ?, ?, ?, ?)', [nombre, apellidos, edad, email, telefono, nivel, zona], (error, result) => {
+        db.query('INSERT INTO corredores (nombre, apellidos, edad, email, password, telefono, nivel, zona) values (?, ?, ?, ?, ?, ?, ?, ?)', [nombre, apellidos, edad, email, password, telefono, nivel, zona], (error, result) => {
             if (error) reject(error);
             resolve(result);
         });
