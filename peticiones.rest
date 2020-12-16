@@ -3,6 +3,7 @@ GET http://localhost:3000/api/eventos
 
 ###
 GET http://localhost:3000/api/corredores
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE2LCJjYWR1Y2lkYWQiOjE2MDgxMTk4NzUsImlhdCI6MTYwODExOTI3NX0.Fl1VWdli3Ep7NPPYr61pedehX0q5lgBH74OOcgsmZdU
 
 ###
 POST http://localhost:3000/api/corredores/registro
@@ -58,6 +59,6 @@ POST http://localhost:3000/api/corredores/login
 Content-Type: application/json
 
 {
-    "email": "gonzalo@gmail.com",
+    "email": "matrix@mail.com",
     "password": "12345"
 }
