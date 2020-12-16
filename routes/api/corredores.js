@@ -8,6 +8,8 @@ const { checkToken } = require('../middlewares');
 
 router.get('/', checkToken, async (req, res) => {
 
+    console.log(req.user);
+
     try {
         const rows = await getAll();
         res.json(rows);
