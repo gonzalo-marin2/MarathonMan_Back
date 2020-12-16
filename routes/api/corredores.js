@@ -18,6 +18,17 @@ router.get('/', checkToken, async (req, res) => {
     }
 });
 
+
+router.get('/perfil', checkToken, async (req, res) => {
+    try {
+        const corredor = await getById(req.user.id);
+        res.json(corredor);
+    } catch (error) {
+        res.json({ error: error.message })
+    }
+})
+
+
 router.get('/:corredorId', checkToken, async (req, res) => {
     try {
         const corredor = await getById(req.params.corredorId);
