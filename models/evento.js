@@ -38,8 +38,17 @@ const deleteById = (pEventoId) => {
 }
 
 
+const getByNivel = (pNivel) => {
+    return new Promise((resolve, reject) => {
+        db.query('select * from eventos where nivel = ?', [pNivel], (error, result) => {
+            if (err) reject(err)
+            resolve(result)
+        })
+    })
+}
+
 
 //const getCorredoresByEvento = () =>
 
 
-module.exports = { getAll, create, getById, deleteById }
+module.exports = { getAll, create, getById, deleteById, getByNivel }

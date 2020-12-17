@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, create, getById, deleteById } = require('../../models/evento');
+const { getAll, create, getById, deleteById, getByNivel } = require('../../models/evento');
 
 
 router.get('/', async (req, res) => {
@@ -40,6 +40,16 @@ router.delete('/:eventoId', async (req, res) => {
         res.json({ error: error.message });
     }
 
+})
+
+
+router.get('/:nivel', async (req, res) => {
+    try {
+        const rows = await getByNivel(req.params.nivel)
+        res.json(rows)
+    } catch (error) {
+        res.json({ error: error.message })
+    }
 })
 
 module.exports = router;
