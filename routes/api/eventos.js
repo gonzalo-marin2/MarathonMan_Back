@@ -44,6 +44,16 @@ router.delete('/:eventoId', async (req, res) => {
 })
 
 
+router.get('/:eventoId', async (req, res) => {
+    try {
+        const rows = await getById(req.params.eventoId)
+        res.json(rows)
+    } catch (error) {
+        res.json({ error: error.message })
+    }
+})
+
+
 router.get('/:nivel', async (req, res) => {
     console.log(req.params);
     try {
