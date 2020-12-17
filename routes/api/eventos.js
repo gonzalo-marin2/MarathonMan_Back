@@ -54,7 +54,7 @@ router.get('/:eventoId', async (req, res) => {
 })
 
 
-router.get('/:nivel', async (req, res) => {
+router.get('/nivel/:nivel', async (req, res) => {
     console.log(req.params);
     try {
         const rows = await getByNivel(req.params.nivel)
@@ -63,5 +63,6 @@ router.get('/:nivel', async (req, res) => {
         res.json({ error: error.message })
     }
 })
+
 
 module.exports = router;
