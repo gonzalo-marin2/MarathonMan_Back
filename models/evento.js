@@ -39,6 +39,7 @@ const deleteById = (pEventoId) => {
 
 
 const getByNivel = (pEventoNivel) => {
+    console.log(pEventoNivel);
     return new Promise((resolve, reject) => {
         db.query('select * from eventos where nivel = ?', [pEventoNivel], (err, rows) => {
             if (err) reject(err);
