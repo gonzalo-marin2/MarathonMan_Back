@@ -45,6 +45,7 @@ router.delete('/:eventoId', async (req, res) => {
 
 
 router.get('/:nivel', async (req, res) => {
+    console.log(req.params);
     try {
         const rows = await getByNivel(req.params.nivel)
         res.json(rows)

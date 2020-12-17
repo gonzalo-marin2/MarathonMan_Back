@@ -68,4 +68,4 @@ GET http://localhost:3000/api/corredores/perfil
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjgsImNhZHVjaWRhZCI6MTYwODEzNDQwOCwiaWF0IjoxNjA4MTMzODA4fQ.7pCEXGJlB-hO_mXwQ6iP_GpWPpK8UkgI5ouK8W8_91E
 
 ###
-GET http://localhost:3000/eventos/Avanzado
+GET http://localhost:3000/api/eventos/Avanzado
