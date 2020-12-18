@@ -64,5 +64,14 @@ router.get('/nivel/:nivel', async (req, res) => {
     }
 })
 
+/* router.post('/', async (req, res) => {
+    try {
+        const result = await apuntarEvento(req.body);
+        if (result.affectedRows === 1) {
+            const apuntado = await apuntarEvento
+        }
+    }
+}) */
+
 
 module.exports = router;

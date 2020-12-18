@@ -49,6 +49,12 @@ const getByNivel = (pEventoNivel) => {
     })
 }
 
+/* const apuntarEvento = (pEventoId, pCorredorId) => {
+    console.log(pEventoId, pCorredorId);
+    return new Promise((resolve, reject) => {
+        db.query('')
+    })
+} */
 
 
 
