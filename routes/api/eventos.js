@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { checkToken } = require('../middlewares');
 const { getAll, create, getById, deleteById, getByNivel, joinEvento } = require('../../models/evento');
 
 
@@ -64,9 +65,9 @@ router.get('/nivel/:nivel', async (req, res) => {
     }
 })
 
-router.post('/joined', async (req, res) => {
+router.post('/joined', checkToken, async (req, res) => {
     try {
-        const result = await joinEvento(req.body);
+        const result = await joinEvento(req.body.eventoId, req.user.id);
         if (result.affectedRows === 1) {
             const apuntado = await getById(result.insertId);
             res.json({

@@ -52,9 +52,8 @@ const getByNivel = (pEventoNivel) => {
 const joinEvento = (pEventoId, pCorredorId) => {
     console.log(pEventoId, pCorredorId);
     return new Promise((resolve, reject) => {
-        db.query('insert into tbi_eventos_corredores values (fk_evento, fk_corredor) values (?, ?)', [pEventoId, pCorredorId], (error, result) => {
+        db.query('insert into tbi_eventos_corredores  (fk_evento, fk_corredor) values (?, ?)', [pEventoId, pCorredorId], (error, result) => {
             if (error) reject(error);
-            if (result.length === 0) resolve(null);
             resolve(result);
         })
     })

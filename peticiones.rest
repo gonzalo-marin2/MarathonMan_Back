@@ -62,7 +62,7 @@ POST http://localhost:3000/api/corredores/login
 Content-Type: application/json
 
 {
-    "email": "laura@pal.com",
+    "email": "matrix@mail.com",
     "password": "12345"
 }
 
@@ -74,5 +74,10 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjgsImNhZHVj
 GET http://localhost:3000/api/eventos/nivel/Avanzado
 
 ###
-POST http://localhost:3000/api/joined
+POST http://localhost:3000/api/eventos/joined
 Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE2LCJjYWR1Y2lkYWQiOjE2MDgyODcxMDMsImlhdCI6MTYwODI4NjUwM30.gsxFQcg15jV41cWT3k4DNxnwuPt3R1lX6FqPw9DxBtg
+
+{
+    "eventoId": 25
+}
