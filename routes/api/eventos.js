@@ -66,6 +66,7 @@ router.get('/nivel/:nivel', async (req, res) => {
 })
 
 router.post('/joined', checkToken, async (req, res) => {
+    console.log(req.body);
     try {
         const result = await joinEvento(req.body.eventoId, req.user.id);
         if (result.affectedRows === 1) {

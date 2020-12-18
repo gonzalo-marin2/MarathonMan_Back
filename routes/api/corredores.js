@@ -101,7 +101,7 @@ router.post('/login', async (req, res) => {
 function createToken(pUsuario) {
     const obj = {
         usuarioId: pUsuario.id,
-        caducidad: dayjs().add(10, 'minute').unix()
+        caducidad: dayjs().add(120, 'minute').unix()
     }
 
     return jwt.sign(obj, process.env.SECRET_KEY);
