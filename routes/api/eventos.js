@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAll, create, getById, deleteById, getByNivel } = require('../../models/evento');
+const { getAll, create, getById, deleteById, getByNivel, joinEvento } = require('../../models/evento');
 
 
 router.get('/', async (req, res) => {
@@ -64,14 +64,21 @@ router.get('/nivel/:nivel', async (req, res) => {
     }
 })
 
-/* router.post('/apuntado', async (req, res) => {
+router.post('/joined', async (req, res) => {
     try {
-        const result = await apuntarEvento(req.body);
+        const result = await joinEvento(req.body);
         if (result.affectedRows === 1) {
-            const apuntado = await apuntarEvento
+            const apuntado = await getById(result.insertId);
+            res.json({
+                mensaje: 'Te has inscrito al evento correctamente'
+            });
+        } else {
+            res.json({ error: 'No te has inscrito en el evento' })
         }
+    } catch (error) {
+        res.json({ error: error.message });
     }
-}) */
+})
 
 
 module.exports = router;

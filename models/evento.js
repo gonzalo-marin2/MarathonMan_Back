@@ -49,7 +49,7 @@ const getByNivel = (pEventoNivel) => {
     })
 }
 
-const apuntarEvento = (pEventoId, pCorredorId) => {
+const joinEvento = (pEventoId, pCorredorId) => {
     console.log(pEventoId, pCorredorId);
     return new Promise((resolve, reject) => {
         db.query('insert into tbi_eventos_corredores values (fk_evento, fk_corredor) values (?, ?)', [pEventoId, pCorredorId], (error, result) => {
@@ -65,4 +65,4 @@ const apuntarEvento = (pEventoId, pCorredorId) => {
 //const getCorredoresByEvento = () =>
 
 
-module.exports = { getAll, create, getById, deleteById, getByNivel }
+module.exports = { getAll, create, getById, deleteById, getByNivel, joinEvento }
