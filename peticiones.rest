@@ -81,3 +81,6 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1
 {
     "eventoId": 25
 }
+
+###
+GET http://localhost:3000/api/publicados
