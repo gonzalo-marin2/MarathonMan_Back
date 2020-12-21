@@ -76,7 +76,7 @@ GET http://localhost:3000/api/eventos/nivel/Avanzado
 ###
 POST http://localhost:3000/api/eventos/joined
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDgyOTA0MDEsImlhdCI6MTYwODI4OTgwMX0.r7SZ2h3dDOC1r5bvUp90gVdham9xfCuOFckvspapIMo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDg1NDYyNDYsImlhdCI6MTYwODUzOTA0Nn0.fYZVXlgq19h9JLA_DwnIzdrAdrHf7BL4Jc2ynUIfF-c
 
 {
     "eventoId": 25

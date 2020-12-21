@@ -1,11 +1,15 @@
 const router = require('express').Router();
 const { checkToken } = require('../middlewares');
-const { getAll, create, getById, deleteById, getByNivel, joinEvento } = require('../../models/evento');
+const { getAll, create, getById, deleteById, getByNivel, joinEvento, getCorredoresByEvento, joinRepetido } = require('../../models/evento');
 
 
 router.get('/', async (req, res) => {
     try {
         const rows = await getAll();
+        for (let evento of rows) {
+            const rows2 = await getCorredoresByEvento(evento.id)
+            evento.corredores = rows2.corredores;
+        }
         res.json(rows);
     } catch (error) {
         res.json({ error: error.message })
@@ -44,7 +48,6 @@ router.delete('/:eventoId', async (req, res) => {
 
 })
 
-
 router.get('/:eventoId', async (req, res) => {
     try {
         const rows = await getById(req.params.eventoId)
@@ -68,14 +71,20 @@ router.get('/nivel/:nivel', async (req, res) => {
 router.post('/joined', checkToken, async (req, res) => {
     console.log(req.body);
     try {
-        const result = await joinEvento(req.body.eventoId, req.user.id);
-        if (result.affectedRows === 1) {
-            const apuntado = await getById(result.insertId);
-            res.json({
-                mensaje: 'Te has inscrito al evento correctamente'
-            });
+        //compruebo si el usuario ya está asignado a este evento
+        const repetido = await joinRepetido(req.body.eventoId, req.user.id);
+        if (repetido.length === 0) {
+            const result = await joinEvento(req.body.eventoId, req.user.id);
+            if (result.affectedRows === 1) {
+                const apuntado = await getById(result.insertId);
+                res.json({
+                    mensaje: 'Te has inscrito al evento correctamente'
+                });
+            } else {
+                res.json({ error: 'No te has inscrito en el evento' })
+            }
         } else {
-            res.json({ error: 'No te has inscrito en el evento' })
+            res.json({ error: 'Ya estás inscrito en el evento' })
         }
     } catch (error) {
         res.json({ error: error.message });

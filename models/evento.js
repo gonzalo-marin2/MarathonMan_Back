@@ -41,8 +41,8 @@ const deleteById = (pEventoId) => {
 const getByNivel = (pEventoNivel) => {
     console.log(pEventoNivel);
     return new Promise((resolve, reject) => {
-        db.query('select * from eventos where nivel = ?', [pEventoNivel], (err, rows) => {
-            if (err) reject(err);
+        db.query('select * from eventos where nivel = ?', [pEventoNivel], (error, rows) => {
+            if (error) reject(error);
             if (rows.length === 0) resolve(null);
             resolve(rows);
         })
@@ -59,9 +59,25 @@ const joinEvento = (pEventoId, pCorredorId) => {
     })
 }
 
+const joinRepetido = (pEventoId, pCorredorId) => {
+    console.log(pEventoId, pCorredorId);
+    return new Promise((resolve, reject) => {
+        db.query('SELECT fk_corredor from tbi_eventos_corredores where fk_evento = ? and fk_corredor = ?', [pEventoId, pCorredorId], (error, result) => {
+            if (error) reject(error);
+            resolve(result);
+        })
+    })
+}
+
+const getCorredoresByEvento = (pEventoId) => {
+    return new Promise((resolve, reject) => {
+        db.query('SELECT COUNT(fk_corredor) as corredores FROM tbi_eventos_corredores WHERE fk_evento = ?', [pEventoId], (error, rows) => {
+            if (error) reject(error);
+            if (rows.length === 0) resolve(null);
+            resolve(rows[0]);
+        })
+    })
+}
 
 
-//const getCorredoresByEvento = () =>
-
-
-module.exports = { getAll, create, getById, deleteById, getByNivel, joinEvento }
+module.exports = { getAll, create, getById, deleteById, getByNivel, joinEvento, getCorredoresByEvento, joinRepetido }
