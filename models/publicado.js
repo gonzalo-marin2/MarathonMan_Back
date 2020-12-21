@@ -7,10 +7,10 @@ const getAll = () => {
     });
 };
 
-const create = (pObjeto) => {
+const create = (pObjeto, pFk_corredor) => {
     console.log(pObjeto);
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO publicaciones (titulo, comentario) values (?, ?)', [pObjeto.titulo, pObjeto.comentario], (error, result) => {
+        db.query('INSERT INTO publicaciones (titulo, comentario, fk_corredor) values (?, ?, ?)', [pObjeto.titulo, pObjeto.comentario, pFk_corredor], (error, result) => {
             if (error) reject(error);
             resolve(result);
         }
@@ -29,6 +29,16 @@ const getById = (pComentarioId) => {
     })
 }
 
+const getByCorredorId = (pCorredorId) => {
+    return new Promise((resolve, reject) => {
+        db.query('select * from publicaciones where fk_corredor = ?', [pCorredorId], (error, rows) => {
+            if (error) reject(error);
+            if (rows.length === 0) resolve(null);
+            resolve(rows);
+        })
+    })
+}
+
 const deleteById = (pComentarioId) => {
     return new Promise((resolve, reject) => {
         db.query('delete from publicaciones where id = ?', [pComentarioId], (error, result) => {
@@ -38,4 +48,4 @@ const deleteById = (pComentarioId) => {
     });
 }
 
-module.exports = { getAll, create, getById, deleteById }
+module.exports = { getAll, create, getById, deleteById, getByCorredorId }

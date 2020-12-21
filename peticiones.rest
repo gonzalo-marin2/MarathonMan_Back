@@ -3,7 +3,7 @@ GET http://localhost:3000/api/eventos
 
 ###
 GET http://localhost:3000/api/corredores
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE2LCJjYWR1Y2lkYWQiOjE2MDgxMTk4NzUsImlhdCI6MTYwODExOTI3NX0.Fl1VWdli3Ep7NPPYr61pedehX0q5lgBH74OOcgsmZdU
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE2LCJjYWR1Y2lkYWQiOjE2MDg1Njc1ODIsImlhdCI6MTYwODU2MDM4Mn0.iDZf0qaAD1hTodWQUG8bzCFrujIfHSUWrp7D5MCrwQY
 
 ###
 POST http://localhost:3000/api/corredores/registro
@@ -83,4 +83,15 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1
 }
 
 ###
-GET http://localhost:3000/api/publicados
+POST http://localhost:3000/api/publicados
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDg1NzEwMzAsImlhdCI6MTYwODU2MzgzMH0.ajGZz5K6J5GzIINj5cdKNMrdUEEzBVhTl52HrqubBAI
+
+{
+    "titulo": "Soy Lolo",
+    "comentario": "Bienvenidos a mi perfil"
+}
+
+###
+GET http://localhost:3000/api/publicados/17
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDg1NzEwMzAsImlhdCI6MTYwODU2MzgzMH0.ajGZz5K6J5GzIINj5cdKNMrdUEEzBVhTl52HrqubBAI
