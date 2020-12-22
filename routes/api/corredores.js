@@ -53,26 +53,6 @@ router.post('/registro', async (req, res) => {
     }
 });
 
-/* router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-    try {
-        const usuario = await getByEmail(email);
-
-
-        const iguales = bcrypt.compareSync(password, usuario.password);//nos devuelve un booleano
-        if (!iguales) {
-            return res.json({ error: 'Error en email y/o password' });
-        }
-
-        res.json({
-            success: 'Correcto!',
-            token: createToken(usuario)
-        });
-    } catch (error) {
-        res.json({ error: error.message });
-    }
-}); */
-
 router.post('/login', async (req, res) => {
 
     const { email, password } = req.body;

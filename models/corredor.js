@@ -38,26 +38,4 @@ const getByEmail = (pEmail) => {
     });
 }
 
-/* const deleteById = (pUsuarioId) => {
-    return new Promise((resolve, reject) => {
-        db.query('delete from corredores where id = ?', [pUsuarioId], (error, result) => {
-            if (error) reject(error)
-            resolve(result);
-        })
-    })
-}
-
-
-const updateById = (pUsuarioId, { nombre, apellidos, edad, email, telefono, nivel, zona }) => {
-    return new Promise((resolve, reject) => {
-        db.query('update corredores set nombre = ?, apellidos = ?, edad = ?, email = ?, telefono = ?, nivel = ?, zona = ?', [nombre, apellidos, edad, email, telefono, nivel, zona, pUsuarioId]), (error, result) => {
-            if (error) reject(error);
-            resolve(result);
-        }
-    })
-} */
-
-
-//const getByEvento
-
 module.exports = { getAll, create, getById, getByEmail }

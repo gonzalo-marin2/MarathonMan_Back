@@ -26,11 +26,7 @@ const checkToken = async (req, res, next) => {
     req.user = usuario;
 
     next();
-    /* if (process.env.MIDDLEWARE_ACTIVE === 'OFF') {
-        return next();
-    } */
 }
-
 
 module.exports = {
     checkToken
