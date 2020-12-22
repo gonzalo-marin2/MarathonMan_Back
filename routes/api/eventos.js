@@ -62,6 +62,10 @@ router.get('/nivel/:nivel', async (req, res) => {
     console.log(req.params);
     try {
         const rows = await getByNivel(req.params.nivel)
+        for (let evento of rows) {
+            const rows2 = await getCorredoresByEvento(evento.id)
+            evento.corredores = rows2.corredores;
+        }
         res.json(rows)
     } catch (error) {
         res.json({ error: error.message })
@@ -72,6 +76,10 @@ router.get('/zona/:zona', async (req, res) => {
     console.log(req.params);
     try {
         const rows = await getByZona(req.params.zona)
+        for (let evento of rows) {
+            const rows2 = await getCorredoresByEvento(evento.id)
+            evento.corredores = rows2.corredores;
+        }
         res.json(rows)
     } catch (error) {
         res.json({ error: error.message })

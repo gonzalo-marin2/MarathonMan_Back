@@ -98,3 +98,8 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1
 ###
 GET http://localhost:3000/api/publicados/17
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDg2MzI3MDUsImlhdCI6MTYwODYyNTUwNX0.ZXC0wSdz9neOjIBpPKd5GE4W0QVeK1aR4poCMsgWrvw
+
+###
+DELETE http://localhost:3000/api/publicados/3
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDg2MzI3MDUsImlhdCI6MTYwODYyNTUwNX0.ZXC0wSdz9neOjIBpPKd5GE4W0QVeK1aR4poCMsgWrvw
