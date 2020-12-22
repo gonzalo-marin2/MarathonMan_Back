@@ -74,7 +74,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1
 GET http://localhost:3000/api/eventos/nivel/avanzado
 
 ###
-GET http://localhost:3000/api/eventos/zona/madrid norte
+GET http://localhost:3000/api/eventos/zona/madrid sur
 
 ###
 POST http://localhost:3000/api/eventos/joined
@@ -88,13 +88,13 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1
 ###
 POST http://localhost:3000/api/publicados
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDg1NzEwMzAsImlhdCI6MTYwODU2MzgzMH0.ajGZz5K6J5GzIINj5cdKNMrdUEEzBVhTl52HrqubBAI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDg2MzI3MDUsImlhdCI6MTYwODYyNTUwNX0.ZXC0wSdz9neOjIBpPKd5GE4W0QVeK1aR4poCMsgWrvw
 
 {
-    "titulo": "Soy Lolo",
-    "comentario": "Bienvenidos a mi perfil"
+    "titulo": "Hola!!",
+    "comentario": "Llevo corriendo maratones 5 años"
 }
 
 ###
 GET http://localhost:3000/api/publicados/17
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDg1NzEwMzAsImlhdCI6MTYwODU2MzgzMH0.ajGZz5K6J5GzIINj5cdKNMrdUEEzBVhTl52HrqubBAI
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDg2MzI3MDUsImlhdCI6MTYwODYyNTUwNX0.ZXC0wSdz9neOjIBpPKd5GE4W0QVeK1aR4poCMsgWrvw
