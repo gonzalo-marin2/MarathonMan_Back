@@ -10,7 +10,7 @@ const getAll = () => {
 const create = (pObjeto, pFk_corredor) => {
     console.log(pObjeto);
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO publications (titulo, publicacion, fk_corredor) values (?, ?, ?)', [pObjeto.titulo, pObjeto.comentario, pFk_corredor], (error, result) => {
+        db.query('INSERT INTO publications (titulo, comentario, fk_corredor) values (?, ?, ?)', [pObjeto.titulo, pObjeto.comentario, pFk_corredor], (error, result) => {
             if (error) reject(error);
             resolve(result);
         }
