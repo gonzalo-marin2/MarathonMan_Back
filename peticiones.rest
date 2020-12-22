@@ -68,10 +68,13 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/corredores/perfil
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjgsImNhZHVjaWRhZCI6MTYwODEzNDQwOCwiaWF0IjoxNjA4MTMzODA4fQ.7pCEXGJlB-hO_mXwQ6iP_GpWPpK8UkgI5ouK8W8_91E
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvSWQiOjE3LCJjYWR1Y2lkYWQiOjE2MDg2MzI3MDUsImlhdCI6MTYwODYyNTUwNX0.ZXC0wSdz9neOjIBpPKd5GE4W0QVeK1aR4poCMsgWrvw
 
 ###
-GET http://localhost:3000/api/eventos/nivel/Avanzado
+GET http://localhost:3000/api/eventos/nivel/avanzado
+
+###
+GET http://localhost:3000/api/eventos/zona/madrid norte
 
 ###
 POST http://localhost:3000/api/eventos/joined

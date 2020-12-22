@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { checkToken } = require('../middlewares');
-const { getAll, create, getById, deleteById, getByNivel, joinEvento, getCorredoresByEvento, joinRepetido } = require('../../models/evento');
+const { getAll, create, getById, deleteById, getByNivel, joinEvento, getCorredoresByEvento, joinRepetido, getByZona } = require('../../models/evento');
 
 
 router.get('/', async (req, res) => {
@@ -62,6 +62,16 @@ router.get('/nivel/:nivel', async (req, res) => {
     console.log(req.params);
     try {
         const rows = await getByNivel(req.params.nivel)
+        res.json(rows)
+    } catch (error) {
+        res.json({ error: error.message })
+    }
+})
+
+router.get('/zona/:zona', async (req, res) => {
+    console.log(req.params);
+    try {
+        const rows = await getByZona(req.params.zona)
         res.json(rows)
     } catch (error) {
         res.json({ error: error.message })

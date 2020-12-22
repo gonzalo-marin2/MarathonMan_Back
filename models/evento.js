@@ -79,5 +79,16 @@ const getCorredoresByEvento = (pEventoId) => {
     })
 }
 
+const getByZona = (pEventoZona) => {
+    console.log(pEventoZona);
+    return new Promise((resolve, reject) => {
+        db.query('select * from eventos where zona = ?', [pEventoZona], (error, rows) => {
+            if (error) reject(error);
+            if (rows.length === 0) resolve(null);
+            resolve(rows);
+        })
+    })
+}
 
-module.exports = { getAll, create, getById, deleteById, getByNivel, joinEvento, getCorredoresByEvento, joinRepetido }
+
+module.exports = { getAll, create, getById, deleteById, getByNivel, joinEvento, getCorredoresByEvento, joinRepetido, getByZona }

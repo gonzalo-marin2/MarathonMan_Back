@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { getAll, create, getById, getByEmail, getByEvento } = require('../../models/corredor');
+const { getByCorredorId } = require('../../models/publicado');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const dayjs = require('dayjs');
@@ -22,6 +23,8 @@ router.get('/', checkToken, async (req, res) => {
 router.get('/perfil', checkToken, async (req, res) => {
     try {
         const corredor = await getById(req.user.id);
+        //sacamos los comentarios del corredor
+        corredor.comentarios = await getByCorredorId(req.user.id);
         res.json(corredor);
     } catch (error) {
         res.json({ error: error.message })
@@ -37,7 +40,6 @@ router.get('/:corredorId', checkToken, async (req, res) => {
         res.json({ error: error.message })
     }
 });
-
 
 
 router.post('/registro', async (req, res) => {
