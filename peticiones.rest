@@ -10,14 +10,14 @@ POST http://localhost:3000/api/corredores/registro
 Content-Type: application/json
 
 {
-    "nombre": "Marcoo",
-    "apellidos": "Antonio",
-    "edad": 33,
-    "email": "mantonio@mail.com",
+    "nombre": "Sofia",
+    "apellidos": "Martin",
+    "edad": 27,
+    "email": "sofia@mail.com",
     "password": "12345",
     "telefono": 123456780,
     "nivel": "Avanzado",
-    "zona": "Madrid Oeste"
+    "zona": "Madrid Capital"
 }
 
 ###
